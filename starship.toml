@@ -6,7 +6,7 @@ add_newline = true
 palette = 'nord'
 
 format = '''
-[┌](bold nord3) [ $directory [](fg:nord8 bg:nord1)](bg:nord8)[](fg:nord8 bg:nord3)[$git_branch](bg:nord3)[](fg:nord3 bg:nord0) $fill [[](fg:nord3 bg:nord0)$conda](bold fg:nord12 bg:nord3)[[](bg:nord3) $time ](bold bg:nord4) [┐](bold nord2)
+[┌](bold nord3)[ $directory [](fg:nord8 bg:nord1)](bg:nord8)[](fg:nord8 bg:nord3)[$git_branch$git_commit](bold fg:nord13 bg:nord3)[](fg:nord3 bg:nord0) $fill [[](fg:nord3 bg:nord0)$conda](bold fg:nord11 bg:nord3)[[](bg:nord3) $time ](bold bg:nord4)[┐](bold nord2)
 [└](bold nord3) $username $character
 '''
 
@@ -20,11 +20,11 @@ symbol = '─'
 style = 'bold nord3'
 
 [character]
-success_symbol = '[❯](bold nord14) '
-error_symbol = '[❯](bold nord11) '
+success_symbol = '[❯](bold nord14)'
+error_symbol = '[❯](bold nord11)'
 
 [directory]
-format = '[$path/]($style)[$read_only]($read_only_style)'
+format = '[$path]($style)[$read_only]($read_only_style)'
 truncation_length = 3
 truncation_symbol = '…/'
 style = 'bold fg:nord1 bg:nord8'
@@ -32,8 +32,8 @@ style = 'bold fg:nord1 bg:nord8'
 [username]
 show_always = true
 format = '[$user]($style)'
-style_user = 'bold fg:nord11'
-style_root = 'bold fg:nord11'
+style_user = 'bold fg:nord12'
+style_root = 'bold fg:nord12'
 
 [time]
 format = '[$time]($style)'
@@ -56,12 +56,13 @@ map_symbol = true
 disabled = false
 
 [git_branch]
-symbol = ''
-format = '[ $symbol $branch(:$remote_branch) ]($style)'
-style = 'bold fg:nord4 bg:nord3'
+symbol = ''
+format = ' $symbol $branch(:$remote_branch)'
+# style = 'bold fg:nord4 bg:nord3'
 
 [git_commit] 
-format = '[\[$hash$tag\]]($style)'
+format = '  $hash '
+# style = 'bold fg:nord4 bg:nord3'
 tag_disabled = true
 only_detached = false
 
