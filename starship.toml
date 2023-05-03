@@ -1,56 +1,58 @@
 # ~/.config/starship.toml
 # '$schema' = 'https://starship.rs/config-schema.json'
-#
 
 add_newline = true
-palette = 'nord'
+palette = 'catppuccin'
+
 
 format = '''
-[┌](bold nord3)[ $directory [](fg:nord8 bg:nord1)](bg:nord8)[](fg:nord8 bg:nord3)[$git_branch$git_commit](bold fg:nord13 bg:nord3)[](fg:nord3 bg:nord0) $fill [[](fg:nord3 bg:nord0)$conda](bold fg:nord11 bg:nord3)[[](bg:nord3) $time ](bold bg:nord4)[┐](bold nord2)
-[└](bold nord3) $username $character
+[┌](bold surface1)[ $directory ](bg:peach)[](fg:peach bg:surface0)[$git_branch$git_commit](bold fg:blue bg:surface0)[](fg:surface0 bg:base) $fill [[](fg:surface0 bg:base)$conda](bold fg:yellow bg:surface0)[[](fg:rosewater bg:surface0) $time ](bold bg:rosewater)[┐](bold surface1)
+[└](bold surface1) $username $character
 '''
 
 right_format = '''
-$status $cmd_duration [┘](bold nord3)
+$status $cmd_duration [┘](bold surface1)
 '''
 
 
 [fill]
 symbol = '─'
-style = 'bold nord3'
+style = 'bold surface1'
 
 [character]
-success_symbol = '[❯](bold nord14)'
-error_symbol = '[❯](bold nord11)'
+success_symbol = '[❯](bold rosewater)'
+error_symbol = '[❯](bold peach)'
 
 [directory]
-format = '[$path]($style)[$read_only]($read_only_style)'
+format = '[$read_only]($read_only_style)[$path]($style)'
 truncation_length = 3
 truncation_symbol = '…/'
-style = 'bold fg:nord1 bg:nord8'
+read_only = '[] '
+read_only_style = 'bold fg:base bg:peach'
+style = 'bold fg:base bg:peach'
 
 [username]
 show_always = true
 format = '[$user]($style)'
-style_user = 'bold fg:nord12'
-style_root = 'bold fg:nord12'
+style_user = 'bold fg:rosewater'
+style_root = 'bold fg:peach'
 
 [time]
 format = '[$time]($style)'
 use_12hr = true
 time_format = '%I:%M %p'
 disabled = false
-style = 'bold fg:nord1 bg:nord4'
+style = 'bold fg:base bg:rosewater'
 
 [cmd_duration]
 format = '[$duration]($style)'
-style = 'bold fg:nord13'
+style = 'bold fg:blue'
 min_time = 0
 
 [status]
-symbol = '(fg:nord11)'
-not_found_symbol = '[](fg:nord11)'
-success_symbol = '[](fg:nord14)'
+symbol = '(fg:red)'
+not_found_symbol = '[](fg:red)'
+success_symbol = '[](fg:green)'
 format = '$symbol'
 map_symbol = true
 disabled = false
@@ -58,11 +60,9 @@ disabled = false
 [git_branch]
 symbol = ''
 format = ' $symbol $branch(:$remote_branch)'
-# style = 'bold fg:nord4 bg:nord3'
 
 [git_commit] 
 format = '  $hash '
-# style = 'bold fg:nord4 bg:nord3'
 tag_disabled = true
 only_detached = false
 
@@ -75,24 +75,31 @@ disabled = false
 symbol = ''
 format = ' $symbol $environment '
 
-[palettes.nord]
-# Polar Night
-nord0 = '#2E3440'
-nord1 = '#3B4252'
-nord2 = '#434C5E'
-nord3 = '#4C566A'
-# Snow Storm
-nord4 = '#D8DEE9'
-nord5 = '#E5E9F0'
-nord6 = '#ECEFF4'
-# Frost
-nord7 = '#8FBCBB'
-nord8 = '#88C0D0'
-nord9 = '#81A1C1'
-nord10 = '#5E81AC'
-# Aurora
-nord11 = '#BF616A'
-nord12 = '#D08770'
-nord13 = '#EBCB8B'
-nord14 = '#A3BE8C'
-nord15 = '#B48EAD'
+# Catppuccin Macchiato
+[palettes.catppuccin]
+rosewater = "#f4dbd6"
+flamingo = "#f0c6c6"
+pink = "#f5bde6"
+mauve = "#c6a0f6"
+red = "#ed8796"
+maroon = "#ee99a0"
+peach = "#f5a97f"
+yellow = "#eed49f"
+green = "#a6da95"
+teal = "#8bd5ca"
+sky = "#91d7e3"
+sapphire = "#7dc4e4"
+blue = "#8aadf4"
+lavender = "#b7bdf8"
+text = "#cad3f5"
+subtext1 = "#b8c0e0"
+subtext0 = "#a5adcb"
+overlay2 = "#939ab7"
+overlay1 = "#8087a2"
+overlay0 = "#6e738d"
+surface2 = "#5b6078"
+surface1 = "#494d64"
+surface0 = "#363a4f"
+base = "#24273a"
+mantle = "#1e2030"
+crust = "#181926"
