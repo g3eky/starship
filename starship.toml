@@ -1,0 +1,97 @@
+# ~/.config/starship.toml
+# '$schema' = 'https://starship.rs/config-schema.json'
+#
+
+add_newline = true
+palette = 'nord'
+
+format = '''
+[┌](bold nord3) [ $directory [](fg:nord8 bg:nord1)](bg:nord8)[](fg:nord8 bg:nord3)[$git_branch](bg:nord3)[](fg:nord3 bg:nord0) $fill [[](fg:nord3 bg:nord0)$conda](bold fg:nord12 bg:nord3)[[](bg:nord3) $time ](bold bg:nord4) [┐](bold nord2)
+[└](bold nord3) $username $character
+'''
+
+right_format = '''
+$status $cmd_duration [┘](bold nord3)
+'''
+
+
+[fill]
+symbol = '─'
+style = 'bold nord3'
+
+[character]
+success_symbol = '[❯](bold nord14) '
+error_symbol = '[❯](bold nord11) '
+
+[directory]
+format = '[$path/]($style)[$read_only]($read_only_style)'
+truncation_length = 3
+truncation_symbol = '…/'
+style = 'bold fg:nord1 bg:nord8'
+
+[username]
+show_always = true
+format = '[$user]($style)'
+style_user = 'bold fg:nord11'
+style_root = 'bold fg:nord11'
+
+[time]
+format = '[$time]($style)'
+use_12hr = true
+time_format = '%I:%M %p'
+disabled = false
+style = 'bold fg:nord1 bg:nord4'
+
+[cmd_duration]
+format = '[$duration]($style)'
+style = 'bold fg:nord13'
+min_time = 0
+
+[status]
+symbol = '(fg:nord11)'
+not_found_symbol = '[](fg:nord11)'
+success_symbol = '[](fg:nord14)'
+format = '$symbol'
+map_symbol = true
+disabled = false
+
+[git_branch]
+symbol = ''
+format = '[ $symbol $branch(:$remote_branch) ]($style)'
+style = 'bold fg:nord4 bg:nord3'
+
+[git_commit] 
+format = '[\[$hash$tag\]]($style)'
+tag_disabled = true
+only_detached = false
+
+[git_state]
+
+[git_metrics]
+disabled = false
+
+[conda]
+symbol = ''
+format = ' $symbol $environment '
+
+[palettes.nord]
+# Polar Night
+nord0 = '#2E3440'
+nord1 = '#3B4252'
+nord2 = '#434C5E'
+nord3 = '#4C566A'
+# Snow Storm
+nord4 = '#D8DEE9'
+nord5 = '#E5E9F0'
+nord6 = '#ECEFF4'
+# Frost
+nord7 = '#8FBCBB'
+nord8 = '#88C0D0'
+nord9 = '#81A1C1'
+nord10 = '#5E81AC'
+# Aurora
+nord11 = '#BF616A'
+nord12 = '#D08770'
+nord13 = '#EBCB8B'
+nord14 = '#A3BE8C'
+nord15 = '#B48EAD'
