@@ -20,8 +20,8 @@ symbol = '─'
 style = 'bold surface1'
 
 [character]
-success_symbol = '[❯](bold rosewater)'
-error_symbol = '[❯](bold peach)'
+success_symbol = '[❯](bold green)'
+error_symbol = '[❯](bold red)'
 
 [directory]
 format = '[$read_only]($read_only_style)[$path]($style)'
@@ -34,7 +34,7 @@ style = 'bold fg:base bg:peach'
 [username]
 show_always = true
 format = '[$user]($style)'
-style_user = 'bold fg:rosewater'
+style_user = 'bold fg:mauve'
 style_root = 'bold fg:peach'
 
 [time]
@@ -51,7 +51,9 @@ min_time = 0
 
 [status]
 symbol = '(fg:red)'
-not_found_symbol = '[](fg:red)'
+not_found_symbol = '[](fg:red)'
+#not_found_symbol = '[](fg:red)'
+#success_symbol = '[](fg:green)'
 success_symbol = '[](fg:green)'
 format = '$symbol'
 map_symbol = true
