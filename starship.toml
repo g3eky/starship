@@ -75,7 +75,7 @@ disabled = false
 
 [conda]
 symbol = ''
-format = ' $symbol $environment '
+format = '$symbol $environment '
 
 # Catppuccin Macchiato
 [palettes.catppuccin]
